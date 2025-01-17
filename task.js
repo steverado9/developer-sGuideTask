@@ -32,26 +32,21 @@ const staffsDetails = [
 ];
 
 //output 1
-const namesOfStaff = staffsDetails.map(function (staffsDetail) {
-    return `I am ${staffsDetail.name} a staff of Royal Suites`;
-});
+const namesOfStaff = staffsDetails.map((staffsDetail) => `I am ${staffsDetail.name} a staff of Royal Suites`);
 console.log('task1 = output 1(namesOfStaff)', namesOfStaff);
 
 //output 2
 let index = 0;
-const namesOfStaffAndIndex = staffsDetails.map(function (staffsDetail) {
-    return `index ${index++} : I am ${staffsDetail.name} a staff of Royal Suites`;
-});
+const namesOfStaffAndIndex = staffsDetails.map((staffsDetail) => `index ${index++} : I am ${staffsDetail.name} a staff of Royal Suites`);
 console.log('task1 = output 2(namesOfStaffAndIndex)', namesOfStaffAndIndex);
 
 //output 3
-const total = staffsDetails.reduce(function (sum, staffsDetail) {
-    return sum + staffsDetail.salary;
-}, 0);
-console.log(`task1 = output3(total), NGN ${total}`);
+let sum = 0;
+staffsDetails.forEach((staffsDetail) => sum += staffsDetail.salary);
+console.log(`task1 = output3(total), NGN ${sum}`);
 
 //output 4
-const salariesGreaterOrEqualTo4000 = staffsDetails.filter(function (staffsDetail) {
+const salariesGreaterOrEqualTo4000 = staffsDetails.filter((staffsDetail) => {
     if (staffsDetail.salary >= 4000) {
         console.log('task1 = output 4(staff names)', staffsDetail.name);
     }
@@ -64,9 +59,7 @@ Square the value of every element in the array.
 */
 const numbers = [1, 2, 3, 4, 5];
 
-const squaredNumbers = numbers.map(function (number) {
-    return number ** 2;
-});
+const squaredNumbers = numbers.map((number) => number ** 2);
 console.log('task2 = squaredNumbers', squaredNumbers);
 
 /*
@@ -77,7 +70,7 @@ Sum of every positive element
 
 const integers = [1, -4, 12, 0, -3, 29, -150];
 
-const sumPostiveNumbers = integers.reduce(function (sum, integer) {
+const sumPostiveNumbers = integers.reduce((sum, integer)=> {
     if (integer > 0) {
         sum += integer;
     }
@@ -92,9 +85,7 @@ calculate and print the total: output "NGN 900"
 */
 const scores = [12, 55, 70, 47];
 
-const totalOutput = scores.reduce(function (sum, score) {
-    return sum += score;
-}, 0);
+const totalOutput = scores.reduce( (sum, score) => sum += score, 0);
 console.log('task4 = totalOutput', totalOutput);
 
 /*
@@ -112,16 +103,12 @@ Expected Ouput 1:
 const cities = ["miami", "barcelona", "madrid", "amsterdam", "berlin", "sao paulo", "lisbon", "mexico city", "paris"];
 
 //output 1
-const newCities = cities.map(function (city) {
-    return city.charAt(0).toUpperCase() + city.slice(1, city.length);
-})
+const newCities = cities.map((city) => city.charAt(0).toUpperCase() + city.slice(1, city.length) );
 console.log('task 5 = outpu1 newCities', newCities);
 
 //output2
 let i = 1;
-const newCitiesAndIndex = cities.map(function (city) {
-    return `${i++}. ${city.charAt(0).toUpperCase() + city.slice(1, city.length)}`;
-})
+const newCitiesAndIndex = cities.map((city) => `${i++}. ${city.charAt(0).toUpperCase() + city.slice(1, city.length)}`);
 console.log('task 5 = outpu2 newCitiesAndIndex', newCitiesAndIndex);
 
 /*
@@ -152,9 +139,7 @@ return first element greater than 10
 */
 const array1 = [5, 12, 8, 130, 44];
 
-const firstElementGreaterThan10 = array1.find(function (arr) {
-    return arr > 10;
-})
+const firstElementGreaterThan10 = array1.find( (arr) => arr > 10);
 console.log(`task 7 = firstElementGreaterThan10, ${firstElementGreaterThan10}`);
 
 /*
@@ -180,17 +165,13 @@ const inventory = [
     { name: "cherries", quantity: 5 },
 ];
 
-const cherries = inventory.filter(function (inventory) {
-    return inventory.name === 'cherries';
-})
+const cherries = inventory.filter((inventory) => inventory.name === 'cherries');
 console.log('task 8 = return object with cherries', cherries);
 
 // task 8.2
 const fruits = ["Banana", "Orange", "Strawberry", "Blueberry"];
 
-const result = fruits.some(function (fruit) {
-    return fruit === 'Apple';
-})
+const result = fruits.some((fruit) => fruit === 'Apple');
 console.log('task 8 = contains Apple', result);
 
 /*Task 9
@@ -198,9 +179,7 @@ Given an array of numbers, return a new array that has only the numbers that are
 [3, 6, 8, 2] */
 const myArray = [3, 6, 8, 2];
 
-const numbersGreaterThan5 = myArray.filter(function (arr) {
-    return arr > 5
-})
+const numbersGreaterThan5 = myArray.filter((arr) => arr > 5);
 console.log('task 9 = numbersGreaterThan5', numbersGreaterThan5);
 
 /*Task 10
@@ -209,9 +188,7 @@ Given an array of numbers, return a new array that only includes the even number
 
 const wholeNumbers = [3, 6, 8, 2];
 
-const evenNumbers = wholeNumbers.filter(function (wholeNumber) {
-    return wholeNumber % 2 === 0;
-})
+const evenNumbers = wholeNumbers.filter((wholeNumber) => wholeNumber % 2 === 0);
 console.log('task 10 = evenNumbers', evenNumbers);
 
 /*Task 11
@@ -219,9 +196,7 @@ Given an array of strings, return a new array that only includes those that are 
 ["dog", "wolf", "by", "family", "eaten", "camping"]*/
 const randomWords = ["dog", "wolf", "by", "family", "eaten", "camping"];
 
-const fiveCharactersOrLesser = randomWords.filter(function (randomWord) {
-    return randomWord.length <= 5;
-})
+const fiveCharactersOrLesser = randomWords.filter((randomWord) => randomWord.length <= 5 );
 console.log('task 11 = fiveCharactersOrLesser', fiveCharactersOrLesser);
 
 /*Task 12
@@ -242,9 +217,7 @@ const peopleObjects = [
     { name: "Bob Ziroll", member: true }
 ];
 
-const members = peopleObjects.filter(function (peopleObject) {
-    return peopleObject.member === true;
-})
+const members = peopleObjects.filter((peopleObject) => peopleObject.member === true);
 console.log('task 12 = array of members =', members);
 
 /*Task 13
@@ -264,9 +237,7 @@ const people = [
     { name: "Bob Ziroll", age: 100 }
 ];
 
-const olderThan18 = people.filter(function (person) {
-    return person.age > 18;
-})
+const olderThan18 = people.filter((person) => person.age > 18);
 console.log('task 13 = olderThan18', olderThan18);
 
 /*
@@ -335,15 +306,11 @@ const characters = [
     },
 ];
 //male characters
-const maleCharacters = characters.filter(function (character) {
-    return character.gender === "male";
-})
+const maleCharacters = characters.filter((character) => character.gender === "male");
 console.log('task14 = maleCharacters', maleCharacters);
 
 //female characters
-const femaleCharacters = characters.filter(function (character) {
-    return character.gender === "female";
-})
+const femaleCharacters = characters.filter((character) => character.gender === "female");
 console.log('task14 = femaleCharacters', femaleCharacters);
 
 /*Task 15
@@ -352,9 +319,7 @@ function that filters valid emails based on the presence of “@”.
  Output ["alice@gmail.com", "bob@", "charlie@domain.com"]*/
 const emails = ["alice@gmail.com", "bob@", "charlie@domain.com", "dave"];
 
-const validEmails = emails.filter(function (email) {
-    return email.includes("@");
-})
+const validEmails = emails.filter((email) => email.includes("@"));
 console.log('task 15 = validEmails', validEmails);
 
 
